@@ -14,6 +14,11 @@ public class AstPrinter implements Expr.Visitor<String> {
     public String visitVariableExpr(Expr.Variable expr) {
         return expr.name.lexeme;
     }
+    // This is here to make the code compile.
+    @Override
+    public String visitAssignExpr(Expr.Assign expr) {
+        return expr.name.lexeme;
+    }
 
     @Override
     public String visitGroupingExpr(Expr.Grouping expr) {
