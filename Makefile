@@ -4,14 +4,14 @@ JVM = java
 
 all: jlox
 
-#compile the java files
+#compile the java files to bin
 jlox: jlox/lox/*.java
-	$(JC) $(JFLAG) jlox/lox/*.java
+	$(JC) $(JFLAG) jlox/lox/*.java -d jlox/bin
 
 #run the java files
 run: jlox
-	$(JVM) jlox/lox/Lox
+	$(JVM) -cp jlox/bin jlox.lox.Lox
 
 #clean the directory
 clean:
-	rm jlox/lox/*.class
+	rm -rf jlox/bin/*
