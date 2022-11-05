@@ -2,7 +2,7 @@ package jlox.lox;
 
 import java.util.List;
 
-abstract class Expr {
+abstract class Expr { // abstract class
     interface Visitor<R> {
         R visitBinaryExpr(Binary expr);
         R visitGroupingExpr(Grouping expr);
