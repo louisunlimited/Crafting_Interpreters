@@ -12,6 +12,9 @@ jlox: jlox/lox/*.java
 run: jlox
 	$(JVM) -cp jlox/bin jlox.lox.Lox
 
+test: jlox
+	$(JVM) -cp jlox/bin jlox.lox.Lox lox_test.lox
+
 #clean the directory
 clean:
 	rm -rf jlox/bin/*
