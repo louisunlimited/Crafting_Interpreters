@@ -24,6 +24,11 @@ public class AstPrinter implements Expr.Visitor<String> {
     public String visitLogicalExpr(Expr.Logical expr) {
         return expr.operator.lexeme;
     }
+    // This is here to make the code compile.
+    @Override
+    public String visitCallExpr(Expr.Call expr) {
+        return expr.paren.lexeme;
+    }
 
     @Override
     public String visitGroupingExpr(Expr.Grouping expr) {
