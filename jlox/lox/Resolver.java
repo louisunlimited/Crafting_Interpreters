@@ -122,7 +122,7 @@ class Resolver implements Expr.Visitor<Void>, Stmt.Visitor<Void> {
         if (currentFunction == FunctionType.NONE) {
             Lox.error(stmt.keyword, "Cannot return from top-level code.");
         }
-        
+
         if (stmt.value != null) {
             resolve(stmt.value);
         }
@@ -196,6 +196,12 @@ class Resolver implements Expr.Visitor<Void>, Stmt.Visitor<Void> {
         }
 
         resolveLocal(expr, expr.name);
+        return null;
+    }
+    
+    @Override
+    public Void visitGroupingExpr(Expr.Grouping expr) {
+        resolve(expr.expression);
         return null;
     }
 }
