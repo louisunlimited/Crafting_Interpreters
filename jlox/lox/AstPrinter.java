@@ -30,6 +30,19 @@ public class AstPrinter implements Expr.Visitor<String> {
         return expr.paren.lexeme;
     }
 
+    // This is here to make the code compile.
+    @Override
+    public String visitGetExpr(Expr.Get expr) {
+        return expr.name.lexeme;
+    }
+
+    // This is here to make the code compile.
+    @Override
+    public String visitSetExpr(Expr.Set expr) {
+        return expr.name.lexeme;
+    }
+    
+
     @Override
     public String visitGroupingExpr(Expr.Grouping expr) {
         return parenthesize("group", expr.expression);
