@@ -2,7 +2,17 @@ JFLAG = -g
 JC = javac
 JVM = java
 
-all: jlox
+C = gcc
+CFLAG = -g -Wall -Wextra -Werror -pedantic -std=c99
+
+# all: jlox clox
+
+# comile c files
+clox: clox/main.c
+	$(C) $(CFLAG) clox/main.c -o clox/bin/clox
+
+crun: clox
+	./clox
 
 #compile the java files to bin
 jlox: jlox/lox/*.java
