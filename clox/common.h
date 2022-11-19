@@ -5,7 +5,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-// this file resides our VM
+/* This file contains our VM */
 
 
 #endif
