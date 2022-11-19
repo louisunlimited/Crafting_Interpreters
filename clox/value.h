@@ -30,6 +30,13 @@ void initValueArray(ValueArray* array);
 void freeValueArray(ValueArray* array);
 
 /*
+ * A function to print a value
+ * @param value: The value to print
+ * @return: void
+ */
+void printValue(Value value);
+
+/*
  * A function to write a value to a value array
  *
  * @param array: The array to write to

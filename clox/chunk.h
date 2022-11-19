@@ -8,7 +8,8 @@
 
 // each instruction has a one-byte opcode, defined in the enum below
 typedef enum {
-    OP_RETURN,
+    OP_CONSTANT, // 00|23 - 00 is the opcode, 23 is the operand
+    OP_RETURN, // 01 - no operand
 } OpCode;
 
 // a chunk is an dynamic array of instructions (opcodes)

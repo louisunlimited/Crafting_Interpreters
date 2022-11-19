@@ -20,6 +20,10 @@ void writeValueArray(ValueArray* array, Value value) {
     array->count++;
 }
 
+void printValue(Value value) {
+    printf("%g", value);
+}
+
 void freeValueArray(ValueArray* array) {
     FREE_ARRAY(Value, array->values, array->capacity);
     initValueArray(array);
