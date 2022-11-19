@@ -18,6 +18,7 @@ typedef struct {
     int count;
     int capacity;
     uint8_t* code;
+    int* lines; // line numbers for each instruction, tho inefficient, it won't take up spaces in CPU
     ValueArray constants;
 } Chunk;
 
@@ -41,9 +42,10 @@ void freeChunk(Chunk* chunk);
  * A function to append a byte to a chunk
  * @param chunk: the chunk to append to
  * @param byte: the byte to append
+ * #param line: the line number of the instruction
  * @return: void
  */
-void writeChunk(Chunk* chunk, uint8_t byte);
+void writeChunk(Chunk* chunk, uint8_t byte, int line);
 
 /*
  * A function to append a new constant to a chunk
