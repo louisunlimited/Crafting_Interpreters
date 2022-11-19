@@ -9,12 +9,12 @@ jlox: jlox/lox/*.java
 	$(JC) $(JFLAG) jlox/lox/*.java -d jlox/bin
 
 #run the java files
-run: jlox
+jrun: jlox
 	$(JVM) -cp jlox/bin jlox.lox.Lox
 
-test: jlox
+jtest: jlox
 	$(JVM) -cp jlox/bin jlox.lox.Lox lox_test.lox
 
 #clean the directory
-clean:
+jclean:
 	rm -rf jlox/bin/*
