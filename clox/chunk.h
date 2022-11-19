@@ -2,6 +2,7 @@
 #define clox_chunk_h
 
 #include "common.h"
+#include "value.h"
 
 /* This file contains the module to define our code representation */
 
@@ -16,6 +17,7 @@ typedef struct {
     int count;
     int capacity;
     uint8_t* code;
+    ValueArray constants;
 } Chunk;
 
 /*
@@ -41,4 +43,13 @@ void freeChunk(Chunk* chunk);
  * @return: void
  */
 void writeChunk(Chunk* chunk, uint8_t byte);
+
+/*
+ * A function to append a new constant to a chunk
+ * @param chunk: the chunk to append to
+ * @param value: the value to append
+ * @return: int - the index of the constant in the chunk's constant pool
+ */
+int addConstant(Chunk* chunk, Value value);
+
 #endif
