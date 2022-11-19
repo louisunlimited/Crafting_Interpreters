@@ -3,13 +3,13 @@ JC = javac
 JVM = java
 
 C = gcc
-CFLAG = -g -Wall -Wextra -Werror -pedantic -std=c99
+CFLAG = -g -std=c99
 
 # all: jlox clox
 
 # comile c files
-clox: clox/main.c
-	$(C) $(CFLAG) clox/main.c -o clox/bin/clox
+clox: clox/*.c
+	$(C) $(CFLAG) clox/*.c -o clox/bin/clox
 
 crun: clox
 	./clox
